@@ -11,13 +11,17 @@ export default function Home() {
 
       <div className="relative z-10 w-full max-w-md">
         <div className="mb-8 text-center">
-          <p className="mb-2 text-sm uppercase tracking-widest text-rose-200">
-            {config.businessName}
-          </p>
+          <img
+            src="/images/logo-terroir-in-focus-white.png"
+            alt={config.businessName}
+            className="mx-auto mb-4 h-24 w-auto drop-shadow-sm"
+          />
           <h1 className="text-3xl font-bold text-white drop-shadow-sm sm:text-4xl">
             {config.offerTitle}
           </h1>
-          <p className="mt-3 text-stone-100/90">{config.offerDescription}</p>
+          <p className="mt-3 text-sm text-stone-100/90 sm:text-base">
+            {config.offerDescription}
+          </p>
         </div>
 
         <div className="rounded-2xl border border-stone-200 bg-white p-6 shadow-xl sm:p-8">
