@@ -14,7 +14,7 @@ export default function Home() {
           <img
             src="/images/logo-terroir-in-focus-white.png"
             alt={config.businessName}
-            className="mx-auto mb-4 h-24 w-auto drop-shadow-sm"
+            className="mx-auto mb-4 h-40 w-auto drop-shadow-sm"
           />
           <h1 className="text-3xl font-bold text-white drop-shadow-sm sm:text-4xl">
             {config.offerTitle}

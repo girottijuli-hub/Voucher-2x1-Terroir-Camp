@@ -150,7 +150,7 @@ export default function SignupForm() {
       </button>
 
       <p className="text-center text-xs text-stone-500">
-        Al registrarte aceptás recibir el voucher y novedades de Terroir Camp por mail.
+        Al registrarte aceptás recibir el voucher y novedades de Doña Paula por mail.
       </p>
     </form>
   );
