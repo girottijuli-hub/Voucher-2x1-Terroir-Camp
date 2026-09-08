@@ -52,9 +52,9 @@ export default function SignupForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-6 text-center">
-        <p className="text-lg font-semibold text-emerald-800">¡Listo! 🎉</p>
-        <p className="mt-2 text-emerald-700">
+      <div className="rounded-xl border border-emerald-400/30 bg-emerald-950/40 p-6 text-center backdrop-blur-sm">
+        <p className="text-lg font-semibold text-emerald-300">¡Listo! 🎉</p>
+        <p className="mt-2 text-emerald-100">
           Te enviamos tu voucher por mail. Si no lo ves en unos minutos, revisá la carpeta de spam.
         </p>
       </div>
@@ -63,9 +63,9 @@ export default function SignupForm() {
 
   if (status === "already") {
     return (
-      <div className="rounded-xl border border-amber-200 bg-amber-50 p-6 text-center">
-        <p className="text-lg font-semibold text-amber-800">Ya estás registrado</p>
-        <p className="mt-2 text-amber-700">
+      <div className="rounded-xl border border-amber-400/30 bg-amber-950/40 p-6 text-center backdrop-blur-sm">
+        <p className="text-lg font-semibold text-amber-300">Ya estás registrado</p>
+        <p className="mt-2 text-amber-100">
           Ese mail ya recibió su voucher anteriormente. Revisá tu casilla (o la de spam).
         </p>
       </div>
@@ -76,7 +76,7 @@ export default function SignupForm() {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div>
-          <label htmlFor="firstName" className="mb-1 block text-sm font-medium text-stone-700">
+          <label htmlFor="firstName" className="mb-1 block text-sm font-medium text-stone-100">
             Nombre
           </label>
           <input
@@ -87,11 +87,11 @@ export default function SignupForm() {
             autoComplete="given-name"
             value={form.firstName}
             onChange={handleChange}
-            className="w-full rounded-lg border border-stone-300 px-3 py-2 text-stone-900 focus:border-rose-800 focus:outline-none focus:ring-1 focus:ring-rose-800"
+            className="w-full rounded-lg border border-white/30 bg-white/10 px-3 py-2 text-white placeholder-white/40 focus:border-white focus:outline-none focus:ring-1 focus:ring-white"
           />
         </div>
         <div>
-          <label htmlFor="lastName" className="mb-1 block text-sm font-medium text-stone-700">
+          <label htmlFor="lastName" className="mb-1 block text-sm font-medium text-stone-100">
             Apellido
           </label>
           <input
@@ -102,13 +102,13 @@ export default function SignupForm() {
             autoComplete="family-name"
             value={form.lastName}
             onChange={handleChange}
-            className="w-full rounded-lg border border-stone-300 px-3 py-2 text-stone-900 focus:border-rose-800 focus:outline-none focus:ring-1 focus:ring-rose-800"
+            className="w-full rounded-lg border border-white/30 bg-white/10 px-3 py-2 text-white placeholder-white/40 focus:border-white focus:outline-none focus:ring-1 focus:ring-white"
           />
         </div>
       </div>
 
       <div>
-        <label htmlFor="email" className="mb-1 block text-sm font-medium text-stone-700">
+        <label htmlFor="email" className="mb-1 block text-sm font-medium text-stone-100">
           Email
         </label>
         <input
@@ -119,7 +119,7 @@ export default function SignupForm() {
           autoComplete="email"
           value={form.email}
           onChange={handleChange}
-          className="w-full rounded-lg border border-stone-300 px-3 py-2 text-stone-900 focus:border-rose-800 focus:outline-none focus:ring-1 focus:ring-rose-800"
+          className="w-full rounded-lg border border-white/30 bg-white/10 px-3 py-2 text-white placeholder-white/40 focus:border-white focus:outline-none focus:ring-1 focus:ring-white"
         />
       </div>
 
@@ -138,7 +138,7 @@ export default function SignupForm() {
       </div>
 
       {status === "error" && (
-        <p className="text-sm text-red-700">{errorMessage}</p>
+        <p className="text-sm text-red-300">{errorMessage}</p>
       )}
 
       <button
@@ -149,7 +149,7 @@ export default function SignupForm() {
         {status === "loading" ? "Enviando..." : "Quiero mi 2x1"}
       </button>
 
-      <p className="text-center text-xs text-stone-500">
+      <p className="text-center text-xs text-stone-300">
         Al registrarte aceptás recibir el voucher y novedades de Doña Paula por mail.
       </p>
     </form>

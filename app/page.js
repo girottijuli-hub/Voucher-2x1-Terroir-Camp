@@ -24,7 +24,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="rounded-2xl border border-stone-200 bg-white p-6 shadow-xl sm:p-8">
+        <div className="rounded-2xl border border-white/20 bg-black/40 p-6 shadow-xl backdrop-blur-md sm:p-8">
           <SignupForm />
         </div>
 
