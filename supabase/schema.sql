@@ -5,7 +5,6 @@ create table if not exists public.signups (
   first_name text not null,
   last_name text not null,
   email text not null unique,
-  voucher_code text not null unique,
   redeemed_at timestamptz,
   created_at timestamptz not null default now()
 );

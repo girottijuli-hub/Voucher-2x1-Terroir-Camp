@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { getSupabaseAdmin } from "@/lib/supabaseAdmin";
 import { getResend } from "@/lib/resend";
-import { generateVoucherCode } from "@/lib/voucher";
 import { buildVoucherEmail } from "@/lib/voucherEmail";
 import { config } from "@/lib/config";
 
@@ -34,7 +33,7 @@ export async function POST(request) {
 
   const { data: existing, error: lookupError } = await supabase
     .from("signups")
-    .select("voucher_code")
+    .select("id")
     .eq("email", email)
     .maybeSingle();
 
@@ -47,13 +46,10 @@ export async function POST(request) {
     return NextResponse.json({ error: "already_registered" }, { status: 409 });
   }
 
-  const voucherCode = generateVoucherCode();
-
   const { error: insertError } = await supabase.from("signups").insert({
     first_name: firstName,
     last_name: lastName,
     email,
-    voucher_code: voucherCode,
   });
 
   if (insertError) {
@@ -66,7 +62,7 @@ export async function POST(request) {
   }
 
   try {
-    const { subject, html, text } = buildVoucherEmail({ firstName, voucherCode });
+    const { subject, html, text } = buildVoucherEmail({ firstName });
     const resend = getResend();
     const { error: emailError } = await resend.emails.send({
       from: config.fromEmail,
